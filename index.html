@@ -26,6 +26,18 @@
     // 🧠 But there's a catch: once `age` reaches 12, the `ageGracefully` method will have no effect.
     class PeterPan {
 
+      constructor(name, age) {
+        this.name = name
+        this.age = 0
+      }
+
+      ageGracefully() {
+
+        this.age += 1
+        if(this.age >= 12) this.age = 12 
+
+      }
+
     }
 
     // 👉 CHALLENGE 2
@@ -38,6 +50,24 @@
     // 🧠 Calling `down` changes the `altitude` prop appropriately and returns the updated `altitude`.
     // 🧠 If calling `down` would cause the plane to go below altitude zero, `altitude` is set to 0 and the string "CRASH!" is returned.
     class AirPlane {
+
+      constructor(model, altitude) {
+        this.model = model
+        this.altitude = 0
+      }
+
+      up(meters) {
+        this.altitude += meters
+        return this.altitude
+      }
+
+      down(meters) {
+
+        this.altitude -= meters
+        if (this.altitude < 0) this.altitude = 0
+        return 'CRASH!'
+        
+      }
 
     }
 
